@@ -27,7 +27,15 @@ const VideoBackground = () => {
       }, []);
     return (
         <div className="video-background">
-            <video autoPlay muted loop id="myVideo" style={{ width: videoDimensions.width, height: videoDimensions.height }}>
+            <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                id="myVideo"
+                style={{ width: videoDimensions.width, height: videoDimensions.height }}
+            >
                 <source src={video} type="video/mp4" />
             </video>
         </div>

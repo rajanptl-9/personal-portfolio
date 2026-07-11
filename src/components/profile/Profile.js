@@ -13,8 +13,8 @@ function Profile() {
                     <div id="subheadfont">Hello, I'm </div>
                     <div id="headfont"> Rajan Patel.</div>
                     <DynamicText />
-                    <div id="description">Recently completed the fourth year of my Bachelor's in Technology program, majoring in Computer Science, at Sardar Vallabhbhai National Institute of Technology (SVNIT), Surat.</div>
-                    <a href="https://drive.google.com/file/d/1GMjI3DbItg-IvEIc12NQALGecg-Bmx7K/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+                    <div id="description">Currently pursuing my Master's in Computer Science at National Institute of Technology, Goa, along with an internship at Intel Technology India Pvt. Ltd.</div>
+                    <a href="https://drive.google.com/file/d/1RI94c4o5rGJUnSEfznONCJN9wZTs35V1/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
                         <div id="downloadcv">Download CV <GrDocumentDownload style={{ paddingLeft: "6px", fontSize:"26px" }} /></div>
                     </a>
                     <div className="socialmedia">

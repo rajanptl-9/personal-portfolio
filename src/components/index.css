@@ -33,11 +33,12 @@
 #navcontainer {
     width: 98%;
     padding: 12px 9vw;
-    background-color: #FFFFFF10;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border-radius: 16px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.68);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(7, 33, 64, 0.14);
+    border: 2px solid rgba(255, 255, 255, 0.48);
     display: flex;
     justify-content: space-between;
     z-index: 10;
@@ -50,6 +51,7 @@
     align-items: center;
     color: #233b5a;
     font-family: 'Rubik';
+    letter-spacing: 0.16em;
 }
 
 .menu_container {
@@ -57,21 +59,34 @@
     justify-content: space-evenly;
     align-items: center;
     color: white;
+    gap: 10px;
 }
 
 .buttons {
-    width: 120px;
-    height: 40px;
-    padding: 18px;
-    margin-inline: 10px;
-    background-color: #233b5a;
+    min-width: 116px;
+    height: 44px;
+    padding: 0 16px;
+    margin-inline: 0;
+    background: linear-gradient(135deg, #233b5a 0%, #385f8c 100%);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
+    font-size: 15px;
     font-family: 'Rubik';
-    border-radius: 8px;
+    border-radius: 999px;
     cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    box-shadow: 0 8px 16px rgba(35, 59, 90, 0.16);
+}
+
+.buttons:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(35, 59, 90, 0.22);
+}
+
+.buttons.active {
+    background: linear-gradient(135deg, #162c46 0%, #1f456d 100%);
+    box-shadow: 0 12px 24px rgba(35, 59, 90, 0.28);
 }
 
 .menu {
@@ -82,41 +97,47 @@
 
 @media screen and (max-width: 768px) {
     .menu {
-        height: 40px;
-        width: 44px;
+        height: 44px;
+        width: 46px;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #233b5a;
-        border-radius: 8px;
+        background: linear-gradient(135deg, #233b5a 0%, #385f8c 100%);
+        border-radius: 999px;
         cursor: pointer;
         padding: 6px;
-        gap: 10px;        
+        gap: 10px;
         flex-direction: column;
         justify-content: right;
+        box-shadow: 0 8px 16px rgba(35, 59, 90, 0.16);
     }
     .menu_container {
         display: none;
     }
     .dropdown-content {
-        width: 100px;
+        width: 120px;
         height: fit-content;
         display: flex;
         justify-content: center;
-        gap: 1px;
+        gap: 6px;
         flex-wrap: wrap;
         position: relative;
         z-index: 12;
-        border-radius: 8px;
+        border-radius: 12px;
+        margin-top: 8px;
     }
-    .menu_button{
-        width: 100px;
-        font-size: 18px;
+    .menu_button {
+        width: 120px;
+        font-size: 16px;
         text-align: center;
-        padding: 5px;
+        padding: 8px 8px;
         color: white;
-        border-radius: 4px;
-        background-color: #233b5a;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #233b5a 0%, #385f8c 100%);
+        box-shadow: 0 8px 16px rgba(35, 59, 90, 0.14);
+    }
+    .menu_button.active {
+        background: linear-gradient(135deg, #162c46 0%, #1f456d 100%);
     }
     .dropdown-content.show {
         display: block;

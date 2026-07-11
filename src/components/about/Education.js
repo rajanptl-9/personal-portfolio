@@ -26,6 +26,12 @@ function Education() {
                             <span className='progress__info' style={{ fontSize: "16px", textAlign: "center" }}>I have completed my undergraduate studies in Computer Science and Engineering at S.V. National Institute of Technology.</span>
                         </div>
                     </li>
+                    <li class="progress__item progress__item--active">
+                        <div className='education_text'>
+                            <a href='https://www.nitgoa.ac.in/' target='_blank' rel="noopener noreferrer" className='progress__title' style={{ textDecoration: "none", display:"flex", alignItems:"center", fontSize: "24px", fontWeight: "600", textAlign: "center", color: "#233b5a" }}>National Institute of Technology Goa (2025-Present) <HiExternalLink   style={{ fontSize: "22px" }} /></a>
+                            <span className='progress__info' style={{ fontSize: "16px", textAlign: "center" }}>I am currently pursuing my postgraduate studies in Computer Science and Engineering at the National Institute of Technology Goa.</span>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div >

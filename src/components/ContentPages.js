@@ -1,21 +1,29 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import "../App.css"
-import Profile from './profile/Profile'
 import { useMyContext } from './ContextVar';
-import Projects from './projects/Projects';
-import About from './about/About';
-import Contact from './contact/Contact';
+
+const Profile = lazy(() => import('./profile/Profile'));
+const Projects = lazy(() => import('./projects/Projects'));
+const About = lazy(() => import('./about/About'));
+const Contact = lazy(() => import('./contact/Contact'));
+
+const SectionLoader = ({ children }) => (
+    <Suspense fallback={<div className="section_skeleton" aria-hidden="true" />}>{children}</Suspense>
+);
 
 function ContentPages() {
     const { menuSelected } = useMyContext();
     return (
         <>
-            {menuSelected === "home" ? <Profile /> :
+            {menuSelected === "home" ? (
+                <SectionLoader><Profile /></SectionLoader>
+            ) : (
                 <div className='main_subcontainer'>
-                    {menuSelected === "about" && <About />}
-                    {menuSelected === "projects" && <Projects />}
-                    {menuSelected === "contact" && <Contact />}
-                </div>}
+                    {menuSelected === "about" && <SectionLoader><About /></SectionLoader>}
+                    {menuSelected === "projects" && <SectionLoader><Projects /></SectionLoader>}
+                    {menuSelected === "contact" && <SectionLoader><Contact /></SectionLoader>}
+                </div>
+            )}
         </>
     )
 }

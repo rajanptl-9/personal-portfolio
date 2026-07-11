@@ -5,17 +5,26 @@
     position: relative;
 }
 
-input {
-    padding: 8px;
-    border: none;
-    border-bottom: 1px solid #999;
-    box-shadow: 1px 1px 3px #233b5a;
+input,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d7e3ef;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 2px rgba(35, 59, 90, 0.06);
     outline: none;
     font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    background: #f8fbff;
+    color: #233b5a;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-input:focus {
-    border-bottom: 2px solid #333;
+input:focus,
+textarea:focus {
+    border-color: #385f8c;
+    box-shadow: 0 0 0 3px rgba(56, 95, 140, 0.16);
+    transform: translateY(-1px);
 }
 
 label {
@@ -27,7 +36,6 @@ label {
 }
 
 input:focus+label,
-
 input:not(:placeholder-shown)+label {
     top: -1.5em;
     font-size: 0.8em;
@@ -35,90 +43,78 @@ input:not(:placeholder-shown)+label {
 }
 
 textarea {
-    width: 96.8%;
-    border-radius: 4px;
+    width: 100%;
+    border-radius: 12px;
     height: 150px;
-    font-size: 16px;
-    font-family: 'Nunito', sans-serif;
-    padding: 8px;
-    border: none;
-    border-bottom: 1px solid #999;
-    box-shadow: 1px 1px 3px #233b5a;
     resize: vertical;
-    /* Allows vertical resizing */
     min-height: 100px;
-    /* Set minimum height */
-    outline: none;
-}
-
-textarea:focus {
-    border-bottom: 2px solid #333;
-}
-
-textarea:focus+label,
-
-textarea:not(:placeholder-shown)+label {
-    top: -1.5em;
-    font-size: 0.8em;
-    color: #333;
 }
 
 .mail_form {
-    width: 50%;
-    padding: 16px;
-    height: 360px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1.5px #233b5a;
+    width: min(560px, 100%);
+    padding: 26px 24px 24px;
+    height: auto;
 }
 
 .form_title {
     width: 100%;
     height: fit-content;
-    font-size: 32px;
-    /* font-family: 'Rubik'; */
+    font-size: 30px;
     font-family: 'Roboto', sans-serif;
-    padding-left: 0.5vw;
     color: #233b5a;
     display: flex;
     justify-content: left;
     align-items: center;
+    margin-bottom: 8px;
 }
 
 .sender_details {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    gap: 12px;
+    margin: 12px 0;
+    align-items: center;
 }
 
 #name,
 #subject {
-    width: 50%;
-    height: 40px;
-    border-radius: 4px;
+    width: calc(50% - 6px);
+    height: 48px;
     font-size: 16px;
 }
 
+.button_holder {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 14px;
+}
+
 .button {
-    width: 170px;
-    height: 42px;
-    background-color: #233b5a;
-    border-radius: 5px;
+    width: 180px;
+    height: 46px;
+    background: linear-gradient(135deg, #233b5a 0%, #385f8c 100%);
+    border-radius: 999px;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4px 16px;
-    margin-inline: 10px;
-    font-size: 24px;
-    font-family: "Signika Negative";
+    padding: 4px 18px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
     text-decoration: none;
     cursor: pointer;
+    box-shadow: 0 10px 20px rgba(35, 59, 90, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(35, 59, 90, 0.24);
 }
 
 @media screen and (max-width: 1200px) {
     .mail_form {
-        width: 100%;        
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -127,11 +123,13 @@ textarea:not(:placeholder-shown)+label {
     .form_title {
         justify-content: center;
     }
+
     #name,
     #subject {
         flex-wrap: wrap;
-        width: 46%;
+        width: calc(50% - 6px);
     }
+
     .button_holder {
         display: flex;
         justify-content: center;
@@ -141,19 +139,24 @@ textarea:not(:placeholder-shown)+label {
 @media screen and (max-width: 600px) {
     .mail_form {
         width: 100%;
-        height: 340px;
         margin-bottom: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: 22px 16px 18px;
     }
-    .button {
-        margin-inline: 0;
+
+    .sender_details {
+        flex-direction: column;
+        align-items: stretch;
     }
 
     #name,
     #subject {
-        flex-wrap: wrap;
-        width: 98%;
+        width: 100%;
+    }
+
+    .button {
+        width: 100%;
     }
 }

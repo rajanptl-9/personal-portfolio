@@ -1,124 +1,168 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
-
-.project_subcontainer{
-    width:98%; 
-    height:fit-content; 
-    overflow-y: auto;
-    display:flex;    
-    justify-content:center;
-    align-items: center;
-}
-.projects{
-    width:100%; 
-    height: fit-content; 
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-.project_title {
-    width: 100%;
+.project_subcontainer {
+    width: 98%;
     height: fit-content;
-    font-size: 48px; 
-    font-family: 'Roboto', sans-serif;
+    overflow-y: auto;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
 }
-#title_box{ 
-    color: white; 
-    background-color: #233b5a; 
-    padding: 5px 16px; 
-    border-radius: 10px;
-}
-.project{
-    min-width: 75%;
+
+.projects {
+    width: 100%;
     height: fit-content;
-    padding: 4px 16px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 360px));
-    gap: 24px;
-    padding: 20px;
-}
-
-
-.card {
-    max-width: 360px;
-    min-width: 200px;
-    min-height: fit-content;
-    padding-bottom: 16px;
-    margin-top: 20px;
-    border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
-    box-shadow: 1px 1px 4px #233b5a; /* Assuming netClr is a variable */
+    padding: 40px 20px 60px;
+    box-sizing: border-box;
+}
+
+.project_title {
+    width: 100%;
+    height: fit-content;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+#title_box {
+    color: #f8fbff;
+    background: linear-gradient(135deg, #233b5a 0%, #385f8c 100%);
+    padding: 10px 24px;
+    border-radius: 14px;
+    box-shadow: 0 12px 24px rgba(35, 59, 90, 0.28);
+    letter-spacing: 0.16em;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.project {
+    min-width: 75%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 360px));
+    gap: 24px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.card {
+    max-width: 360px;
+    min-width: 220px;
+    min-height: fit-content;
+    padding-bottom: 18px;
+    margin-top: 0;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 45px rgba(7, 33, 64, 0.12);
+    border: 1px solid rgba(35, 59, 90, 0.12);
     flex-grow: 1;
+    content-visibility: auto;
+    contain-intrinsic-size: 320px 420px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-image {
+    width: 100%;
+    height: 164px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+    display: block;
+    background-color: #dfe7f1;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 56px rgba(7, 33, 64, 0.18);
+}
+
+.card img_div {
+    width: 100%;
+    height: 164px;
+    border-radius: 20px 20px 0 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .card .name {
     width: 100%;
-    padding: 6px 0 0 0;
-    color: #233b5a; /* Assuming netClr is a variable */
-    font-size: 30px;
-    font-family: 'Signika Negative', sans-serif;
-    font-weight: 600;
+    padding: 12px 12px 0 12px;
+    color: #233b5a;
+    font-size: 28px;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    font-weight: 700;
     text-align: center;
 }
 
 .card .details {
     width: 100%;
     box-sizing: border-box;
-    padding: 15px 15px;
+    padding: 10px 14px 14px 14px;
     font-size: 16px;
-    font-family: 'Nunito', sans-serif;
-    color: #233b5a; /* Assuming netClr is a variable */
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    color: #2f4056;
     text-align: center;
+    line-height: 1.5;
+}
+
+.card .link_button,
+.card .website_button {
+    width: 88%;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 16px;
+    color: white;
+    text-decoration: none;
+    border-radius: 999px;
+    font-size: 16px;
+    text-align: center;
+    margin: 6px auto;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 10px 20px rgba(35, 59, 90, 0.16);
 }
 
 .card .link_button {
-    width: 92%;
-    box-sizing: border-box;
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #24292e;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.card .link_button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(26, 26, 46, 0.24);
 }
 
 .card .website_button {
-    width: 92%;
-    box-sizing: border-box;
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #2036a1;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
+    background: linear-gradient(135deg, #233b5a 0%, #385f8c 100%);
 }
 
-.github-button{
+.card .website_button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(35, 59, 90, 0.24);
+}
+
+.github-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
 }
 
-
 @media screen and (max-width: 768px) {
-    .project{
+    .project {
         justify-content: center;
     }
 }
 
 @media screen and (max-width: 1200px) {
-    .project{
+    .project {
         justify-content: center;
     }
 }

@@ -1,58 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
 
-.skill_container{
-    width:68%;
-    height:fit-content;
+.skill_container {
+    width: min(1100px, 92%);
+    height: fit-content;
     display: flex;
-    margin: 20px 0;
-    padding: 10px 0;
+    margin: 22px 0 0;
+    padding: 24px 18px 28px;
     flex-direction: column;
     align-items: center;
-    flex-wrap:wrap;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 1px 1px 1.5px #233b5a;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    border-radius: 22px;
+    box-shadow: 0 20px 45px rgba(7, 33, 64, 0.12);
+    border: 1px solid rgba(35, 59, 90, 0.12);
 }
-#skills_title{
-    width:100%;
-    font-size:48px;            
-    /* font-family: 'Rubik'; */
+
+#skills_title {
+    width: 100%;
+    font-size: 48px;
     font-family: 'Roboto', sans-serif;
     color: #233b5a;
     text-align: center;
-    margin-bottom:10px
-}
-#skills_subtitle{
-    width:100%;
-    font-size:28px;
-    color: #233b5a;
-    text-align: center;
-    margin-bottom:10px;
-    font-family: "Signika Negative";
-}
-.skills{
-    width:80%;
-    height:fit-content;
-    display: flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    margin-bottom:10px
+    margin-bottom: 6px;
 }
 
-.skill{
+#skills_subtitle {
+    width: 100%;
+    font-size: 24px;
+    color: #385f8c;
+    text-align: center;
+    margin-bottom: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.skills {
+    width: min(900px, 100%);
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.skill {
     font-size: 28px;
     font-family: 'Nunito', sans-serif;
 }
 
-.skill-icon{
+.skill-icon {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 @media screen and (max-width: 1200px) {
-    .skill_container{
-        width:94%;
+    .skill_container {
+        width: min(900px, 94%);
     }
 }

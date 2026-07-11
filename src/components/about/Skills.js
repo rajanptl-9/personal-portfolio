@@ -7,6 +7,7 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { SiRedux, SiMongodb, SiOracle, SiMicrosoftazure, SiPostman } from "react-icons/si";
 import { PiFileSql } from "react-icons/pi";
 import { GrMysql } from "react-icons/gr";
+import { FaGolang } from "react-icons/fa6";
 
 function Skills() {
   return (
@@ -17,6 +18,7 @@ function Skills() {
             <Skill icon={<FaJava className='skill'/>} name="Java" />
             <Skill icon={<FaPython className='skill'/>} name="Python" />
             <Skill icon={<TbBrandCpp className='skill'/>} name="C/C++" />
+            <Skill icon={<FaGolang className='skill'/>} name="Golang" />
             <Skill icon={<FaHtml5 className='skill'/>} name="HTML" />
             <Skill icon={<FaCss3Alt className='skill'/>} name="CSS" />
             <Skill icon={<IoLogoJavascript className='skill'/>} name="JavaScript" />
